@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table style="width: auto;" class="table table-striped table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Delete Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% if ticker %}	
+		{% for item in ticker %}
+			<tr>
+				<th><a href="{% url 'delete' item.id %}"  class="btn btn-secondary btn-block">
+				{{ item }}</a></th>
+				
+			</tr>
+		{% endfor %}
+	{% endif %}
+  </tbody>
+</table>
+
+{% endblock %}

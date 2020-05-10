@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if ticker %}
+	{{ticker}}
+{% endif %}
+
+{% if api %}
+	{% load humanize %}
+
+	{% if api == "Error..." %}
+		There was a problem with your ticker symbol... 
+		please try again...
+	{% else %}
+		<h1>{{ api.companyName}}</h1><br/>
+		Price: ${{ api.latestPrice | floatformat:2 | intcomma }}<br/>
+		Previous Close: ${{ api.previousClose | floatformat:2 | intcomma }}<br/>
+		Today's Open: ${{ api.open | floatformat:2 | intcomma }}<br/>
+		YTD Change: {{ api.ytdChange | floatformat:2 | intcomma }}<br/>
+		52wk High: ${{ api.week52High | floatformat:2 | intcomma }}<br/>
+		52wk Low ${{ api.week52Low | floatformat:2 | intcomma }}<br/><br/>	
+	{% endif %}
+{% endif %}
+
+{% endblock %}
