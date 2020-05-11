@@ -12,13 +12,44 @@
 		There was a problem with your ticker symbol... 
 		please try again...
 	{% else %}
-		<h1>{{ api.companyName}}</h1><br/>
-		Price: ${{ api.latestPrice | floatformat:2 | intcomma }}<br/>
-		Previous Close: ${{ api.previousClose | floatformat:2 | intcomma }}<br/>
-		Today's Open: ${{ api.open | floatformat:2 | intcomma }}<br/>
-		YTD Change: {{ api.ytdChange | floatformat:2 | intcomma }}<br/>
-		52wk High: ${{ api.week52High | floatformat:2 | intcomma }}<br/>
-		52wk Low ${{ api.week52Low | floatformat:2 | intcomma }}<br/><br/>	
+		<table style="width: auto;" class="table table-striped table-bordered table-hover">
+		  <thead class="thead-dark">
+		    <tr>
+		     	<th scope="col">{{ api.companyName }}</th>
+		     	<th scope="col"></th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			<tr>
+				<td>Symbol</td>
+				<td>{{ api.symbol }}</td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td>${{ api.latestPrice | floatformat:2 | intcomma }}</td>
+			</tr>
+			<tr>
+				<td>Previous Close</td>
+				<td>${{ api.previousClose | floatformat:2 | intcomma }}</td>
+			</tr>
+			<tr>
+				<td>Today's Open</td>
+				<td>${{ api.open | floatformat:2 | intcomma }}</td>
+			</tr>
+			<tr>
+				<td>YTD Change</td>
+				<td>{{ api.ytdChange | floatformat:2 | intcomma }}</td>
+			</tr>
+			<tr>
+				<td>52wk High</td>
+				<td>${{ api.week52High | floatformat:2 | intcomma }}</td>
+			</tr>
+			<tr>
+				<td>52wk Low</td>
+				<td>${{ api.week52Low | floatformat:2 | intcomma }}</td>
+			</tr>
+		</tbody>
+	</table>
 	{% endif %}
 {% endif %}
 

@@ -32,12 +32,12 @@
   			<tr>
 				<th>{{ list_item.symbol }}</th>
 				<td>{{ list_item.companyName }}</td>
-				<td>${{ list_item.latestPrice | floatformat:2 | intcomma  }}</td>
-				<td>${{ list_item.previousClose | floatformat:2 | intcomma  }}</td>
-				<td>${{ list_item.open | floatformat:2 | intcomma  }}</td>
-				<td>{{ list_item.ytdChange | floatformat:2 | intcomma  }}</td>
-				<td>${{ list_item.week52High | floatformat:2 | intcomma  }}</td>
-				<td>${{ list_item.week52Low | floatformat:2 | intcomma  }}</td>
+				<td>${{ list_item.latestPrice | floatformat:2 | intcomma }}</td>
+				<td>${{ list_item.previousClose | floatformat:2 | intcomma }}</td>
+				<td>${{ list_item.open | floatformat:2 | intcomma }}</td>
+				<td>{{ list_item.ytdChange | floatformat:2 | intcomma }}</td>
+				<td>${{ list_item.week52High | floatformat:2 | intcomma }}</td>
+				<td>${{ list_item.week52Low | floatformat:2 | intcomma }}</td>
 			</tr>
 		{% endfor %}
 
